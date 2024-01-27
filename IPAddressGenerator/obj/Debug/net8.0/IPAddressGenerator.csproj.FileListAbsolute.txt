@@ -1,0 +1,14 @@
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\IPAddressGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\IPAddressGenerator.AssemblyInfoInputs.cache
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\IPAddressGenerator.AssemblyInfo.cs
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\IPAddressGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\bin\Debug\net8.0\IPAddressGenerator.exe
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\bin\Debug\net8.0\IPAddressGenerator.deps.json
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\bin\Debug\net8.0\IPAddressGenerator.runtimeconfig.json
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\bin\Debug\net8.0\IPAddressGenerator.dll
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\bin\Debug\net8.0\IPAddressGenerator.pdb
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\IPAddressGenerator.dll
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\refint\IPAddressGenerator.dll
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\IPAddressGenerator.pdb
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\IPAddressGenerator.genruntimeconfig.cache
+C:\Users\Ofentse Pholosi\Documents\VS Code\CsharpProjects\IPAddressGenerator\IPAddressGenerator\obj\Debug\net8.0\ref\IPAddressGenerator.dll

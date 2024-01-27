@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "IPAddressGenerator/1.0.0": {
+        "runtime": {
+          "IPAddressGenerator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IPAddressGenerator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
