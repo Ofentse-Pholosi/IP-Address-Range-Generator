@@ -36,7 +36,7 @@ namespace SubnestDictionary {
             // A dictionary with predefined binary subnet masks
             Dictionary<string, string> binarySubnetMask = new Dictionary<string, string>
             {
-                { "25", "11111111.11111111.11111111.00000000" },
+                { "24", "11111111.11111111.11111111.00000000" },
                 { "25", "11111111.11111111.11111111.10000000" },
                 { "26", "11111111.11111111.11111111.11000000" },
                 { "27", "11111111.11111111.11111111.11100000" },
@@ -107,9 +107,9 @@ namespace SubnestDictionary {
             }
         }
 
-        public static int provisionalHostsPerSubnet (int requestedHosts)
+        public static int provisionalHostsPerSubnet (int requestedHostsPerSubnet)
         {
-            int provisionedHosts;
+            int provisionedHosts, provisionedSubnets;
 
             Dictionary<int, int> provisionalHosts = new Dictionary<int, int>
             {
@@ -124,10 +124,38 @@ namespace SubnestDictionary {
                 { 1, 256 }      // 256 Subnets, 1 host per subnet (Should show error)
             };
 
-            provisionedHosts = provisionalHosts[requestedHosts];
+            // Check if the required number of hosts per subnets is in the dictionary
+            if (provisionalHosts.ContainsKey(requestedHostsPerSubnet))
+            {
+                int numberOfSubnets = provisionalHosts[requestedHostsPerSubnet];
+                int numberOfUsableHosts = requestedHostsPerSubnet - 2; // Subtract 2 for network and broadcast addresses
+                provisionedHosts = numberOfUsableHosts;
+                provisionedSubnets = provisionalSubnetsDictionary(numberOfSubnets);
 
-            return provisionedHosts;
+                Console.WriteLine($"Number of usable IP addresses per subnet: {numberOfUsableHosts}");
+                Console.WriteLine($"Provisioning for {numberOfUsableHosts}, {numberOfSubnets} subnets:");
+                return provisionedSubnets;
+            }
+            else
+            {
+                // If the required number of subnets is not in the dictionary, find the next higher value
+                provisionedHosts = provisionalHosts.Keys.FirstOrDefault(k => k > requestedHostsPerSubnet);
 
+                if (provisionedHosts < 128 && provisionedHosts <= 1)
+                {
+                    int numberOfSubnets = provisionalHosts[provisionedHosts];
+                    int numberOfUsableHosts = provisionedHosts - 2; // Subtract 2 for network and broadcast addresses
+                    provisionedSubnets = provisionalSubnetsDictionary(numberOfSubnets);
+
+                    Console.WriteLine($"Number of usable IP addresses per subnet: {numberOfUsableHosts}");
+                    Console.WriteLine($"Provisioning {numberOfUsableHosts}, per {numberOfSubnets} subnets");
+                    return provisionedSubnets;
+                }
+                else
+                {
+                    throw new ArgumentException("Error: Invalid number of required Hosts. Please choose a valid value.");
+                }
+            }
         }
     }
 }

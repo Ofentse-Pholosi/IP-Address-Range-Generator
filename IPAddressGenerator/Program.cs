@@ -12,12 +12,12 @@ namespace IPAddressGenerator{
         {
             // Local program variables
             string networkId, subnetMask;
-            int requiredSubnets, subnetMaskLength, requiredHosts;
+            int requiredSubnets, subnetMaskLength, requiredHostsPerSubnet;
 
             Console.WriteLine("======= IP Address Range Calculator ======= \n");
             
             Console.WriteLine("Please enter a Network ID");
-            Console.WriteLine("Network ID: (E.g 192.198.4.0/24)");
+            Console.WriteLine("Network ID: (E.g 192.168.4.0/24)");
             networkId = Console.ReadLine();
 
             // Validating inputted network id:
@@ -51,8 +51,33 @@ namespace IPAddressGenerator{
             else if (input == 2)
             {
                 Console.WriteLine("Please enter the number of hosts per subnet are required: ");
-                requiredHosts = int.Parse(Console.ReadLine()); 
-            }  
+                requiredHostsPerSubnet = int.Parse(Console.ReadLine());
+
+                requiredSubnets = SubnetMaskDictionary.provisionalHostsPerSubnet(requiredHostsPerSubnet);
+                IPAddressRangeCalculator.CalculateIPRanges(networkId, requiredSubnets);
+            }
+
+            // Making the program recursive
+            bool retryProgram;
+            do
+            {
+                Console.WriteLine("Press 1 to Exit or 2 to retry program again");
+                int userInput = int.Parse(Console.ReadLine());
+                if (userInput == 1)
+                {
+                    Program.Main();
+                    retryProgram = true;
+                }
+                else if (userInput == 2)
+                {
+                    retryProgram = false;
+                }
+                else
+                {
+                    Console.WriteLine("Error!: Invalid input. Retrying Program");
+                    retryProgram = true;
+                }
+            }while (retryProgram);
         }
     }
 }
